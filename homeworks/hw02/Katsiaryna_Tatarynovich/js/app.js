@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showMoonElement() {
         moonElement.style.display = 'block';
+        moonElement.style.animationName = 'moveDown';
+        moonElement.style.animationDuration = '0.5s';
         body.style.overflow = 'hidden';
         body.className = 'overlay';
     }
