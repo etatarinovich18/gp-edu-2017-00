@@ -13,9 +13,9 @@
     <section class="wrap">
         <form action="url" method="GET" id="form-filter" class="form-filter">
             <section class="form-filter__section form-filter__section--intro">
-                <span for="form-filter-price">We've found you <span>32</span> results based on a starting balance of</span>
+                <span class="filter-text">We've found you <span>32</span> results based on a starting balance of</span>
                 <div class="input-badge input-badge--money">
-                    <input type="number" id="form-filter-price" class="input placeholder" placeholder="" max="1000000" min="0" required />
+                    <input type="number" class="input placeholder" placeholder="" max="1000000" min="0" required />
                 </div><!--
                 --><span>.</span>
             </section>
@@ -60,18 +60,14 @@
                     <div class="filter-variations__element">
                         <div class="form-unit">
                             <label class="form-unit__label">Transfer in:</label>
-                            <div class="form-unit__checkbox">
-                                <div class="form-unit__checkbox--element">
-                                    <div class="custom-checkbox">
-                                        <input type="checkbox" id="filter-by-opt-phone" name="filter-by-opt" value="opt-in-phone" class="custom-checkbox__input">
-                                        <label for="filter-by-opt-phone" class="custom-checkbox__label">Opt in phone</label>
-                                    </div>
+                            <div class="form-unit__checkbox form-unit__checkbox--element">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="filter-by-opt-phone" name="filter-by-opt" value="opt-in-phone" class="custom-checkbox__input">
+                                    <label for="filter-by-opt-phone" class="custom-checkbox__label">Opt in phone</label>
                                 </div>
-                                <div class="form-unit__checkbox--element">
-                                    <div class="custom-checkbox">
-                                        <input type="checkbox" id="filter-by-opt-text" name="filter-by-opt" value="opt-in-text" class="custom-checkbox__input">
-                                        <label for="filter-by-opt-text" class="custom-checkbox__label">Opt in text</label>
-                                    </div>
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="filter-by-opt-text" name="filter-by-opt" value="opt-in-text" class="custom-checkbox__input">
+                                    <label for="filter-by-opt-text" class="custom-checkbox__label">Opt in text</label>
                                 </div>
                             </div>
                         </div>

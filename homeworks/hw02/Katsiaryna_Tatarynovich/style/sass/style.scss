@@ -14,6 +14,7 @@ html, body {
 
 body {
     background-color: $azure;
+    font-family: "Open Sans", sans-serif;
     @media screen and (max-width: $medium-screen-width) {
         padding: 0 10px;
     }
@@ -78,7 +79,6 @@ input:valid:not(:placeholder-shown) {
 
         &--intro {
             color: $gray;
-            font-family: "Open Sans", sans-serif;
             font-size: 20px;
             line-height: 1.4;
             @media screen and (max-width: $small-screen-width) {
@@ -169,7 +169,6 @@ input:valid:not(:placeholder-shown) {
         display: block;
         padding-bottom: 10px;
         color: $gray-dark;
-        font-family: "Open Sans", sans-serif;
         font-size: 14px;
         font-weight: bold;
         line-height: 1.4;
@@ -194,62 +193,68 @@ input:valid:not(:placeholder-shown) {
 
     &__checkbox {
         &--element {
-            margin-bottom: 10px;
-
-            .custom-checkbox__label {
-                @media screen and (max-width: $medium-screen-width) {
-                    line-height: 1.4;
-                }
-            }
-
             .custom-checkbox {
+                margin-bottom: 10px;
+                
                 @media screen and (max-width: $medium-screen-width) {
                     margin-top: 0;
                 }
+
+                &__label {
+                    @media screen and (max-width: $medium-screen-width) {
+                        line-height: 1.4;
+                    }
+                }
                 &__input {
                     &:not(checked) {
-                        & + .custom-checkbox__label{
-                            display: inline-block;
-                            width: 100%;
-                            padding: 11px 30px 11px 50px;
-                            background-color: $white;
-                            box-shadow: 0 2px $gray-light;
-                            border-radius: 5px;
+                        & + .custom-checkbox {
+                            &__label {
+                                display: inline-block;
+                                width: 100%;
+                                padding: 11px 30px 11px 50px;
+                                background-color: $white;
+                                box-shadow: 0 2px $gray-light;
+                                border-radius: 5px;
 
-                            &:before {
-                                top: 9px;
-                                left: 15px;
-                                background: $white;
-                            }
+                                &:before {
+                                    top: 9px;
+                                    left: 15px;
+                                    background: $white;
+                                }
 
-                            &:after {
-                                top: 16px;
-                                left: 9px;
-                                color: $deepskyblue;
+                                &:after {
+                                    top: 16px;
+                                    left: 9px;
+                                    color: $deepskyblue;
+                                }
                             }
                         }
                     }
 
                     &:checked {
-                        & + .custom-checkbox__label {
-                            color: $white;
-                            background-color: $deepskyblue;
-                            box-shadow: 0 2px $deepskyblue-dark inset;
-
-                            &:before {
-                                background-color: $deepskyblue;
-                                border-color: $white;
-                            }
-
-                            &:after {
+                        & + .custom-checkbox {
+                            &__label {
                                 color: $white;
+                                background-color: $deepskyblue;
+                                box-shadow: 0 2px $deepskyblue-dark inset;
+
+                                &:before {
+                                    background-color: $deepskyblue;
+                                    border-color: $white;
+                                }
+
+                                &:after {
+                                    color: $white;
+                                }
                             }
                         }
                     }
 
                     &:focus {
-                        & + .custom-checkbox__label {
-                            box-shadow: 0 0 8px $deepskyblue;
+                        & + .custom-checkbox {
+                            &__label {
+                                box-shadow: 0 0 8px $deepskyblue;
+                            }
                         }
                     }
                 }
@@ -388,7 +393,6 @@ input:valid:not(:placeholder-shown) {
 
     &__label {
         color: $gray;
-        font-family: "Open Sans", sans-serif;
         font-size: 14px;
         font-weight: bold;
         line-height: 1.4;
@@ -402,7 +406,6 @@ input:valid:not(:placeholder-shown) {
 .filter-title {
     padding-bottom: 20px;
     color: $indigo;
-    font-family: "Open Sans", sans-serif;
     font-size: 18px;
     font-weight: bold;
     line-height: 1.3;
