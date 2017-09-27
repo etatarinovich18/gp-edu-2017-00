@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         moonElement.style.animationName = 'moveDown';
         moonElement.style.animationDuration = '0.5s';
         body.style.overflow = 'hidden';
-        body.className = 'overlay';
+        body.classList.toggle('overlay');
     }
 
     function hideMoonElement() {
