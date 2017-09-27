@@ -548,8 +548,8 @@ input:valid:not(:placeholder-shown) {
 
     &__element {
         position: absolute;
-        width: 440px;
-        height: 440px;
+        width: $large-moon-size;
+        height: $large-moon-size;
         left: 50%;
         top: 50%;
         background-color: $white;
@@ -558,8 +558,8 @@ input:valid:not(:placeholder-shown) {
         transform: translate(-50%, -50%);
         z-index: 200;
         @media screen and (max-width: $small-screen-width) {
-            width: 300px;
-            height: 300px;
+            width: $small-moon-size;
+            height: $small-moon-size;
         }
     }
 
@@ -606,6 +606,14 @@ input:valid:not(:placeholder-shown) {
             }
         }
     }
+}
+
+.display-block {
+    display: block;
+}
+
+.overflow-hidden {
+    overflow: hidden;
 }
 
 .placeholder::-webkit-input-placeholder {
