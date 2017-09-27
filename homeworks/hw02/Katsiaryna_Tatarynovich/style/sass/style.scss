@@ -527,7 +527,7 @@ input:valid:not(:placeholder-shown) {
 
 .moon {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -631,12 +631,12 @@ input:valid:not(:placeholder-shown) {
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
 }
-
-@keyframes moveDown {
-    from {
-        top: -50%;
-    }
-    to {
-        top: 0;
-    }
-}
+//
+// @keyframes moveDown {
+//     from {
+//         top: -50%;
+//     }
+//     to {
+//         top: 0;
+//     }
+// }
