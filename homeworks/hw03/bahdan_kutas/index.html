@@ -16,16 +16,16 @@
         <form class="filter">
             <section class="section">
                 <div class="section__wraper">
-                    <h5 class="section__heading section__heading--intro">We’ve found you 32 results based on a starting balance of</h5>
+                    <h5 class="section__intro-heading">We’ve found you 32 results based on a starting balance of</h5>
                     <div class="section__text">
                         <div class="text-input">
                             <input type="text" class="text-input__input" value="100000" required>
                         </div>
                     </div>
                 </div>
-                <div class="section__area section__area--intro">
+                <div class="section__area">
                     <div class="section__area-title">Account type(s)</div>
-                    <div class="section__dropdown section__dropdown--intro">
+                    <div class="section__dropdown section__dropdown--display-inline">
                         <div class="dropdown">
                             <select class="dropdown__select" name="" id="" required>
                                 <option class="dropdown__option"  value="" selected disabled hidden>Show all</option>
@@ -34,7 +34,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="section__checkbox section__checkbox--intro">
+                    <div class="section__checkbox section__checkbox--layout">
                         <div class="checkbox checkbox">
                             <input class="checkbox__input" type="checkbox" id="account-checkbox">
                             <label for="account-checkbox" class="checkbox__label">Only show accounts I can open through MoneySupermarket (5)</label>
@@ -47,13 +47,13 @@
                 <div class="section__area">
                     <div class="section__area-title">Transfer in</div>
                         <div class="section__radio">
-                            <div class="radio radio--results">
+                            <div class="radio radio">
                                 <input type="radio" name="radio-group" id="result-radio-a" class="radio__radiobtn" required>
                                 <label for="result-radio-a" class="radio__label">Yes</label>
                             </div>
                         </div>
                         <div class="section__radio">
-                            <div class="radio radio--results">
+                            <div class="radio radio">
                                 <input type="radio" name="radio-group" id="result-radio-b" class="radio__radiobtn">
                                 <label for="result-radio-b" class="radio__label">No</label>
                             </div>
@@ -63,14 +63,14 @@
                     <div class="section__area-title">Account opening</div>
                         <div class="section__checkbox">
                             <div class="checkbox">
-                                <input class="checkbox__input checkbox__input--results" type="checkbox" id="account-checkbox-a">
-                                <label for="account-checkbox-a" class="checkbox__label checkbox__label--results">Opt in phone</label>
+                                <input class="checkbox__input checkbox__input--button" type="checkbox" id="account-checkbox-a">
+                                <label for="account-checkbox-a" class="checkbox__label checkbox__label--button">Opt in phone</label>
                             </div>
                         </div>
                         <div class="section__checkbox">
                             <div class="checkbox">
-                                <input class="checkbox__input checkbox__input--results" type="checkbox" id="account-checkbox-b">
-                                <label for="account-checkbox-b" class="checkbox__label checkbox__label--results">Opt in text</label>
+                                <input class="checkbox__input checkbox__input--button" type="checkbox" id="account-checkbox-b">
+                                <label for="account-checkbox-b" class="checkbox__label checkbox__label--button">Opt in text</label>
                             </div>
                         </div>
                 </div>
@@ -96,10 +96,10 @@
                     </div>
                 </div>
             </section>
-            <section class="section section--order">
-                <h5 class="section__heading section__heading--order">Order results by:</h5>
-                <div class="section__area section__area--order">
-                    <div class="dropdown dropdown--order">
+            <section class="section section--row-flow">
+                <h5 class="section__heading section__heading--no-padding">Order results by:</h5>
+                <div class="section__area section__area--margin">
+                    <div class="dropdown dropdown--width">
                         <select class="dropdown__select" name="" id="" required>
                             <option class="dropdown__option" value="" selected disabled hidden>Interest rate (AER)</option>
                             <option class="dropdown__option" value="1">1</option>

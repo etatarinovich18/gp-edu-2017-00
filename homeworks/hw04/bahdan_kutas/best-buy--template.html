@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/best-buy--styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <script src="https://use.fontawesome.com/e331dce35e.js" async></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="money-header">
+        <img src="./img/money-logo.jpg" alt="money supermarket logo" class="money-header__logo">
+        <div class="money-header__menu">
+            <a href="#" class="money-header__menu-item money-header__menu-item--user">Sign in</a>
+            <a href="#" class="money-header__menu-item">Retrieve quotes</a>            
+        </div>
+    </header>
+    <div class="breadcrumbs-wraper">
+        <div class="breadcrumbs">
+            <a href="#" class="breadcrumbs__item">Credit Cards</a>
+            <a href="#" class="breadcrumbs__item breadcrumbs__item--current">Results</a>        
+        </div>
+    </div>
+    <div class="search-wraper">
+        <form action="" class="search">
+            <section class="search__section">
+                <span class="search__heading">We've found 52 cards. You have selected</span>
+                <div class="search__dropdown search__dropdown--big">
+                    <div class="dropdown">
+                        <select class="dropdown__select dropdown__select--big" name="" id="" required>
+                            <option class="dropdown__option" value="" selected disabled hidden>Balance transfer cards</option>
+                            <option class="dropdown__option" value="1">1</option>
+                            <option class="dropdown__option" value="2">2</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <section class="search__section search__section--border-bot">
+                <span class="search__back-text">You can also <a class="search__link" href="#">go back</a> to ammend your personal details</span>
+            </section>
+            <section class="search__section search__section--padding-top search__section--nowrap">
+                <span class="search__results-heading">Order results by:</span>
+                <div class="search__dropdown search__dropdown--small">
+                    <div class="dropdown">
+                        <select class="dropdown__select" name="" id="" required>
+                            <option class="dropdown__option" value="" selected disabled hidden>Interest rate (AER)</option>
+                            <option class="dropdown__option" value="1">1</option>
+                            <option class="dropdown__option" value="2">2</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+    <div class="main">
+        <div class="main__pagination">
+            <div class="pagination">
+                <div class="pagination__stage pagination__stage--checked">
+                    <a class="pagination__link pagination__link--checked" href="#">
+                        1
+                        <span class="pagination__text pagination__text--checked pagination__text--width">Your energy usage</span>
+                    </a>
+                    
+                </div>
+                <div class="pagination__stage pagination__stage--current">
+                    <a class="pagination__link pagination__link--current" href="#">
+                        2
+                        <span class="pagination__text pagination__text--current">Results</span>
+                    </a>
+                    
+                </div>
+                <div class="pagination__stage pagination__stage--inactive">
+                    <a class="pagination__link pagination__link--inactive" href="#">
+                        3
+                        <span class="pagination__text pagination__text--inactive">Switch</span>
+                    </a>
+                </div>
+                <div class="pagination__stage pagination__stage--inactive">
+                    <a class="pagination__link pagination__link--inactive pagination__link--position-last" href="#">
+                        4
+                        <span class="pagination__text pagination__text--inactive">Thanks</span>                        
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="main__card-wraper">
+            <article class="card">
+                <header class="card__section card__section--align-center card__section--border-bot card__section--nowrap">
+                    <div class="card__logo">
+                        <img src="./img/logo.jpg" alt="" class="card__logo-img">
+                        <div class="card__description">
+                                <span class="card__name">Halifax</span>
+                                <span class="card__note">0% Balance Transfer Free Offer</span>
+                        </div>
+                    </div>
+                    <div class="card__button card__button--margin-right card__button--mobile-none">
+                        <button class="button">GO TO SITE</button>
+                    </div>
+                </header>
+                <section class="card__section">
+                    <div class="card__specs">
+                        <section class="card__details card__details--first">
+                            <span class="card__type">Balance transfer</span>
+                            <span class="card__offer card__offer--fc-purple">0% 41 months</span>
+                            <span class="card__note card__note--fw-normal">then 18.95%</span>
+                            <span class="card__taxes">0% fee</span>
+                        </section>
+                        <section class="card__details">
+                            <span class="card__type">Purchases</span>
+                            <span class="card__offer">0% 6 months</span>
+                            <span class="card__note">then 18.95%</span>
+                        </section>
+                        <section class="card__details">
+                            <span class="card__type">Rewards</span>
+                            <span class="card__offer">No rewards</span>
+                        </section>
+                        <section class="card__details">
+                            <span class="card__type">Representative APR</span>
+                            <span class="card__offer">18.9% APR</span>
+                            <span class="card__note">variable</span>
+                        </section>
+                        <section class="card__details card__details--media">
+                            <span class="card__type">Chance of aproval</span>
+                            <div class="card__aproval-chance">
+                                Will you get this card?
+                            </div>
+                            <div class="card__link">
+                                <a class="link" href="#">Start</a>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="card__button card__button--margin-right card__button--mobile-display">
+                        <button class="button">GO TO SITE</button>
+                    </div>
+                    <section class="card__link card__link--padding-right">
+                        <a class="link" href="#">More details</a>
+                    </section>
+                </section>
+                <section class="card__section card__section--justify-left">
+                    <ul class="card__list">
+                        <li class="card__list-heading">Great for</li>
+                        <li class="card__list-item card__list-item--advantage">Suitable for first time buyers looking to save for the deposit on your first home</li>
+                        <li class="card__list-item card__list-item--advantage">Start saving with a deposit from 1 and pay money in as often as you like</li>
+                        <li class="card__list-item card__list-item--advantage">Theft of caravan covered as standard</li>
+                    </ul>
+                    <ul class="card__list">
+                        <li class="card__list-heading">But be aware that</li>
+                        <li class="card__list-item card__list-item--disadvantage">You can only deposit up to 1,200 in the first month, and then up to 200 per month thereafter</li>
+                        <li class="card__list-item card__list-item--disadvantage">The Government will give you a 25% tax-free bonus on the money you put away, subject to eligibility</li>
+                        <li class="card__list-item card__list-item--disadvantage">To view the Scheme Rules in full, plese visit helptobuy.gov.uk/isa</li>
+                    </ul>
+                </section>
+                <footer class="card__section card__section--footer">
+                    <span class="card__example">Representative Example: If you spend 1,200  at a purchase interest rate of 18.95% p.a. (variable) your representative rate will be 18.9% APR (variable).</span>
+                </footer>  
+            </article>
+        </div>
+    
+    </div>
+
+</body>
+</html>

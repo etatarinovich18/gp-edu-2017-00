@@ -40,6 +40,133 @@
     </section>
     <div class="wrap">
         <page set-form-filter-status="$ctrl.setFormFilterStatus(error, isValid, isSubmitted)" set-price-field-status="$ctrl.setPriceFieldStatus(value, error, isValid)" set-password-field-status="$ctrl.setPasswordFieldStatus(error, isValid)"></page>
+        <form action="url" method="GET" id="form-filter" class="form-filter">
+            <section class="form-filter__section-intro">
+                <span class="filter-text">We've found you <span>32</span> cards. You have selected</span>
+                <div class="custom-select custom-select--margin-screen-m-top">
+                    <select id="form-filter-account-type-two" class="custom-select__element" required>
+                        <option value="" selected hidden disabled>--Balance transfer cards--</option>
+                        <option value="select1">Select type 2</option>
+                        <option value="select2">Select type 3</option>
+                    </select>
+                </div>
+            </section>
+            <section class="form-filter__section-text">
+                <p>You can also <a href="#" class="link">go back</a> and amend your personal details</p>
+            </section>
+            <section class="form-filter__section-order">
+                <h2 class="filter-title">Order results by:</h2>
+                <div class="custom-select">
+                    <select class="custom-select__element" required>
+                        <option value="" disabled hidden selected>Balance transfer</option>
+                        <option value="1">Select type 2</option>
+                        <option value="2">Select type 3</option>
+                    </select>
+                </div>
+            </section>
+        </form>
+        <section class="result-unit">
+            <div class="result-unit__item">
+                <div class="result-unit__item-description">
+                    <img src="img/credit-card.png" alt="Imade of credit card" class="result-unit__item-description-image">
+                    <div class="result-unit__info">
+                        <h3 class="result-unit__title">Halifax</h3>
+                        <p class="result-unit__description">0% Balance Transfer Free Offer</p>
+                    </div>
+                </div>
+                <div class="result-unit__link" id="goToSiteLink">
+                    <a class="button button--green" href="#">go to site</a>
+                </div>
+            </div>
+            <div class="result-unit__details" id="detailsWrap">
+                <div class="result-unit__details-items">
+                    <div class="result-unit__details-item result-unit__details-item--padding-left-md-25 result-unit__details-item--color-indigo result-unit__details-item--background">
+                        <h4 class="result-unit__title result-unit__title--color result-unit__title--font">Balance transfer</h4>
+                        <p class="result-unit__description">
+                            <strong class="result-unit__description--strong">0% 41 months</strong> then 18.95%
+                            <span class="result-unit__description-fee">0% fee</span>
+                        </p>
+                    </div>
+                    <div class="result-unit__details-item">
+                        <h4 class="result-unit__title result-unit__title--color result-unit__title--font">Purchases</h4>
+                        <p class="result-unit__description">
+                            <strong class="result-unit__description--strong">0% 6 months</strong> then 18.95%
+                        </p>
+                    </div>
+                    <div class="result-unit__details-item">
+                        <h4 class="result-unit__title result-unit__title--color result-unit__title--font">Rewards</h4>
+                        <p class="result-unit__description">
+                            <strong class="result-unit__description--strong">No rewards</strong>
+                        </p>
+                    </div>
+                    <div class="result-unit__details-item">
+                        <h4 class="result-unit__title result-unit__title--color result-unit__title--font">Representative APR</h4>
+                        <p class="result-unit__description">
+                            <strong class="result-unit__description--strong">18.9% APR</strong> variable
+                        </p>
+                    </div>
+                    <div class="result-unit__details-item result-unit__details-item--mobile result-unit__details-item--padding-right-md-25">
+                        <h4 class="result-unit__title result-unit__title--color result-unit__title--font">Chance of approval</h4>
+                        <div class="result-unit__info-suggestion">Will you get this card?</div>
+                        <div class="result-unit__info-link">
+                            <a href="#" class="link link--badges link--badges-arrow">Start</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-unit__details-link" id="moreDetailsLink">
+                    <a href="#" class="link link--badges link--badges-arrow">More details</a>
+                </div>
+            </div>
+            <div class="result-unit__compare">
+                <div class="result-unit__info result-unit__info--padding-right-25">
+                    <h5 class="result-unit__title">Great for</h5>
+                    <ul class="result-unit__description">
+                        <li class="list-item list-item--badge-tick">Suitable for
+                            first buyers looking to save for the deposit on your first home
+                        </li>
+                        <li class="list-item list-item--badge-tick">Start saving
+                            with a deposit from &#163;1 and pay money in as othen
+                            as you like
+                        </li>
+                        <li class="list-item list-item--badge-tick">Chose between
+                            monthly or annual interest
+                        </li>
+                    </ul>
+                </div>
+                <div class="result-unit__info">
+                    <h5 class="result-unit__title">But be aware that</h5>
+                    <ul class="result-unit__description">
+                        <li class="list-item list-item--badge-dash">You can
+                            only deposit up to &#163;1,200 in the first month,
+                            and then up to &#163;200 per month thereafter
+                        </li>
+                        <li class="list-item list-item--badge-dash">The Govermant
+                            will give you a 25% tax-free bonus on the money you
+                            put away, subject to eligibility
+                        </li>
+                        <li class="list-item list-item--badge-dash">To view the
+                            Scheme Rules in full, please visit helptobuy.gov.uk/isa
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="result-unit__item result-unit__item--padding-0">
+                <div class="result-unit__info-example">
+                    <p class="result-unit__description result-unit__description--strong">
+                        <strong>Representative Example: If
+                            you spend &#163;1,200 at a purchase interest rate of
+                            18.95% p.a. (variable) your representative rate will be 18.9% APR
+                            (variable).
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="pagination">
+            <button class="button button--deepskyblue">See the next 20 cards</button>
+        </div>
+>>>>>>> develop
     </div>
+    <script src="js/app.js"></script>
 </body>
 </html>
