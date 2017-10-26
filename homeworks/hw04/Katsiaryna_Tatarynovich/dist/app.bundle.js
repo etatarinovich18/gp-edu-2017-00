@@ -46714,7 +46714,7 @@ class IntervalValidatorDirective {
         const arrInterval = interval.slice(1, interval.length - 1).split(',');
 
         ngModel.$validators.intervalCheck = (modelValue, viewValue) => {
-            let isInValidValue = ngModel.$isEmpty(modelValue) || Number(modelValue.split(',').join('')) < Number(arrInterval[1]) && Number(modelValue.split(',').join('')) > Number(arrInterval[0]);
+            let isInValidValue = ngModel.$isEmpty(modelValue) || Number(modelValue.split(',').join('')) <= Number(arrInterval[1]) && Number(modelValue.split(',').join('')) >= Number(arrInterval[0]);
 
             return isInValidValue;
         };
