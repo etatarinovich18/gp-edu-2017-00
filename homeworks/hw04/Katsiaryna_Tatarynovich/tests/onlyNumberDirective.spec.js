@@ -1,11 +1,6 @@
 describe('Only number directive', () => {
     let suite = {};
     let form;
-    let triggerEvent = (elem, type) => {
-        let event = suite.$document[0].createEvent('Event');
-        event.initEvent(type);
-        elem.dispatchEvent(event);
-    };
 
     angular.mock.module.sharedInjector();
 
@@ -24,15 +19,14 @@ describe('Only number directive', () => {
         suite = null;
     });
 
-    it('should be only number', () => {
-        form.input.val('aaaa').trigger('input');
-        scope.$apply();
-        // form.input.triggerHandler('input');
-        // triggerEvent(form.input, 'input');
-        // suite.scope.$digest();
-            // form.input;
-        // debugger;
+    it('result should be only number', () => {
+        let inputValue = ['aaaa', '111111', '111111sss', 'sdsd111111', '.111111'];
+        let rightResultOfInput = ['', '111111', '111111', '111111', '111111'];
 
-        expect(form.input.$viewValue).toEqual('');
+        inputValue.forEach((current, index) => {
+            suite.element[0][0].value = current;
+            angular.element(suite.element[0][0]).triggerHandler('input');
+            expect(suite.element[0][0].value).toEqual(rightResultOfInput[index]);
+        });
     });
 });

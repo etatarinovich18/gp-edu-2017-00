@@ -7,11 +7,15 @@ export class OnlyNumberDirective {
     }
 
     link(scope, element, attr, ngModel) {
+        const updateView = (value) => {
+            ngModel.$viewValue = value;
+            ngModel.$render();
+        };
+
         element.on('input', () => {
             let onlyNumberValue = ngModel.$viewValue.replace(/[^0-9]/g, '');
-
-            ngModel.$setViewValue(onlyNumberValue);
-            ngModel.$render();
+            
+            updateView(onlyNumberValue);
         });
     }
 }
