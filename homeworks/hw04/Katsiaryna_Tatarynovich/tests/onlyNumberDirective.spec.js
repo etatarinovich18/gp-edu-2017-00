@@ -7,9 +7,11 @@ describe('Only number directive', () => {
         elem.dispatchEvent(event);
     };
 
-    beforeEach(angular.mock.module('app'));
+    angular.mock.module.sharedInjector();
 
-    beforeEach(angular.mock.inject(($compile, $rootScope) => {
+    beforeAll(angular.mock.module('app'));
+
+    beforeAll(angular.mock.inject(($compile, $rootScope) => {
         suite.scope = $rootScope.$new();
         suite.element = angular.element('<form name="form"><input data-ng-model="value" data-only-number name="input"/></form>');
         suite.element = $compile(suite.element)(suite.scope);
@@ -17,8 +19,14 @@ describe('Only number directive', () => {
         form = suite.scope.form;
     }));
 
+    afterAll(() => {
+        suite.element.remove();
+        suite = null;
+    });
+
     it('should be only number', () => {
-        form.input.$setViewValue('aaaa');
+        form.input.val('aaaa').trigger('input');
+        scope.$apply();
         // form.input.triggerHandler('input');
         // triggerEvent(form.input, 'input');
         // suite.scope.$digest();

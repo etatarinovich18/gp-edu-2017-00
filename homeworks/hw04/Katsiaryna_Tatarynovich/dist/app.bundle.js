@@ -46811,7 +46811,7 @@ class OnlyNumberDirective {
 
     link(scope, element, attr, ngModel) {
         element.on('input', () => {
-            let onlyNumberValue = ngModel.$viewValue.replace(/[^0-9\.]/g, '');
+            let onlyNumberValue = ngModel.$viewValue.replace(/[^0-9]/g, '');
 
             ngModel.$setViewValue(onlyNumberValue);
             ngModel.$render();

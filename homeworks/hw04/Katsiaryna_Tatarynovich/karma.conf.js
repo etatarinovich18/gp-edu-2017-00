@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        { pattern: 'tests.webpack.js', watched: false }
+        { pattern: './tests/entry.js', watched: false }
     ],
 
 
@@ -27,7 +27,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        'tests.webpack.js': ['webpack']
+        './tests/entry.js': ['webpack']
     },
 
 
