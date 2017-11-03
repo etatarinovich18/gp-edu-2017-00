@@ -12,11 +12,13 @@ import { MinLengthValidatorDirective } from './directives/MinLengthValidatorDire
 import { PatternValidatorDirective } from './directives/PatternValidatorDirective.js';
 import { OnlyNumberDirective } from './directives/OnlyNumberDirective.js';
 import { FormatInputDirective } from './directives/FormatInputDirective.js';
+// import { MinAgeDirective } from './directives/MinAgeDirective.js';
 
 import pageComponent from './components/page/pageComponent.js';
 import moneyInputComponent from './components/input/moneyInputComponent.js';
 import passwordInputComponent from './components/input/passwordInputComponent.js';
 import cardComponent from './components/cards/cardComponent.js';
+import dateOfBirthComponent from './components/dateOfBirth/dateOfBirthComponent.js';
 
 import { rootReducer } from './reducers';
 
@@ -36,6 +38,7 @@ angular
     .component('moneyInput', moneyInputComponent)
     .component('passwordInput', passwordInputComponent)
     .component('card', cardComponent)
+    .component('dateOfBirth', dateOfBirthComponent)
 
     .directive('reduxDirective', ReduxDirective)
     .directive('interval', IntervalValidatorDirective)
@@ -44,3 +47,4 @@ angular
     .directive('customPattern', PatternValidatorDirective)
     .directive('onlyNumber', OnlyNumberDirective)
     .directive('formatInput', ['$filter', FormatInputDirective]);
+    // .directive('minAge', MinAgeDirective);

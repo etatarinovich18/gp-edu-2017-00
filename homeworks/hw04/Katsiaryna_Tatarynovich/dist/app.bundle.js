@@ -1439,7 +1439,7 @@ const TODOS = {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(52);
-module.exports = __webpack_require__(143);
+module.exports = __webpack_require__(144);
 
 
 /***/ }),
@@ -1470,7 +1470,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_input_moneyInputComponent_js__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_input_passwordInputComponent_js__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_cards_cardComponent_js__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__reducers__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_dateOfBirth_dateOfBirthComponent_js__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__reducers__ = __webpack_require__(142);
 
 
 
@@ -1484,6 +1485,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+
+// import { MinAgeDirective } from './directives/MinAgeDirective.js';
 
 
 
@@ -1494,8 +1497,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('app', [__WEBPACK_IMPORTED_MODULE_1_angular_messages___default.a, __WEBPACK_IMPORTED_MODULE_3_ng_redux__["a" /* default */], __WEBPACK_IMPORTED_MODULE_2_angular_ui_router___default.a]).config($ngReduxProvider => {
-    $ngReduxProvider.createStoreWith(__WEBPACK_IMPORTED_MODULE_17__reducers__["a" /* rootReducer */], [__WEBPACK_IMPORTED_MODULE_4_redux_logger___default.a, __WEBPACK_IMPORTED_MODULE_5_redux_thunk___default.a]);
-}).component('page', __WEBPACK_IMPORTED_MODULE_13__components_page_pageComponent_js__["a" /* default */]).component('moneyInput', __WEBPACK_IMPORTED_MODULE_14__components_input_moneyInputComponent_js__["a" /* default */]).component('passwordInput', __WEBPACK_IMPORTED_MODULE_15__components_input_passwordInputComponent_js__["a" /* default */]).component('card', __WEBPACK_IMPORTED_MODULE_16__components_cards_cardComponent_js__["a" /* default */]).directive('reduxDirective', __WEBPACK_IMPORTED_MODULE_6__directives_ReduxDirective_js__["a" /* ReduxDirective */]).directive('interval', __WEBPACK_IMPORTED_MODULE_7__directives_IntervalValidatorDirective_js__["a" /* IntervalValidatorDirective */]).directive('maxLength', __WEBPACK_IMPORTED_MODULE_8__directives_MaxLengthValidatorDirective_js__["a" /* MaxLengthValidatorDirective */]).directive('minLength', __WEBPACK_IMPORTED_MODULE_9__directives_MinLengthValidatorDirective_js__["a" /* MinLengthValidatorDirective */]).directive('customPattern', __WEBPACK_IMPORTED_MODULE_10__directives_PatternValidatorDirective_js__["a" /* PatternValidatorDirective */]).directive('onlyNumber', __WEBPACK_IMPORTED_MODULE_11__directives_OnlyNumberDirective_js__["a" /* OnlyNumberDirective */]).directive('formatInput', ['$filter', __WEBPACK_IMPORTED_MODULE_12__directives_FormatInputDirective_js__["a" /* FormatInputDirective */]]);
+    $ngReduxProvider.createStoreWith(__WEBPACK_IMPORTED_MODULE_18__reducers__["a" /* rootReducer */], [__WEBPACK_IMPORTED_MODULE_4_redux_logger___default.a, __WEBPACK_IMPORTED_MODULE_5_redux_thunk___default.a]);
+}).component('page', __WEBPACK_IMPORTED_MODULE_13__components_page_pageComponent_js__["a" /* default */]).component('moneyInput', __WEBPACK_IMPORTED_MODULE_14__components_input_moneyInputComponent_js__["a" /* default */]).component('passwordInput', __WEBPACK_IMPORTED_MODULE_15__components_input_passwordInputComponent_js__["a" /* default */]).component('card', __WEBPACK_IMPORTED_MODULE_16__components_cards_cardComponent_js__["a" /* default */]).component('dateOfBirth', __WEBPACK_IMPORTED_MODULE_17__components_dateOfBirth_dateOfBirthComponent_js__["a" /* default */]).directive('reduxDirective', __WEBPACK_IMPORTED_MODULE_6__directives_ReduxDirective_js__["a" /* ReduxDirective */]).directive('interval', __WEBPACK_IMPORTED_MODULE_7__directives_IntervalValidatorDirective_js__["a" /* IntervalValidatorDirective */]).directive('maxLength', __WEBPACK_IMPORTED_MODULE_8__directives_MaxLengthValidatorDirective_js__["a" /* MaxLengthValidatorDirective */]).directive('minLength', __WEBPACK_IMPORTED_MODULE_9__directives_MinLengthValidatorDirective_js__["a" /* MinLengthValidatorDirective */]).directive('customPattern', __WEBPACK_IMPORTED_MODULE_10__directives_PatternValidatorDirective_js__["a" /* PatternValidatorDirective */]).directive('onlyNumber', __WEBPACK_IMPORTED_MODULE_11__directives_OnlyNumberDirective_js__["a" /* OnlyNumberDirective */]).directive('formatInput', ['$filter', __WEBPACK_IMPORTED_MODULE_12__directives_FormatInputDirective_js__["a" /* FormatInputDirective */]]);
+// .directive('minAge', MinAgeDirective);
 
 /***/ }),
 /* 53 */
@@ -46952,8 +46956,29 @@ const cardComponent = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+class dateOfBirthController {
+    constructor() {
+        console.log(this);
+    }
+}
+
+const dateOfBirthComponent = {
+    templateUrl: 'app/components/dateOfBirth/dateOfBirthTemplate.html',
+    controller: dateOfBirthController
+    // bindings: {
+    //     setPriceFieldStatus: '&'
+    // }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (dateOfBirthComponent);
+
+/***/ }),
+/* 142 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__todosReducer_js__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__todosReducer_js__ = __webpack_require__(143);
 
 
 
@@ -46962,7 +46987,7 @@ const rootReducer = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["c" /* combineRed
 
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46994,7 +47019,7 @@ const todosReducer = (state = initialState, action) => {
 
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

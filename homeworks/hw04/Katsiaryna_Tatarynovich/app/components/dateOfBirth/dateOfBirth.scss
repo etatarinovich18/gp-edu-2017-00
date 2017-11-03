@@ -1,0 +1,33 @@
+.date-of-birth {
+    display: flex;
+    margin-bottom: 20px;
+
+    &__input {
+        width: 115px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+
+        &--border-radius-0 {
+            border-radius: 0;
+        }
+
+        &--border-radius-right {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &--border-radius-left {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &--shadow-left {
+            box-shadow: 2px 2px $gray-light inset;
+        }
+
+        &--shadow-right {
+            box-shadow: -2px 2px $gray-light inset;
+        }
+    }
+}

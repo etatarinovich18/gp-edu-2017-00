@@ -1,0 +1,89 @@
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  margin: -($size/2);
+  border-radius: 50%;
+}
+
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@function fern-coords($points, $i) {
+  $p: random(1000);
+  $tmp: ();
+
+  @if $p < 701 {
+    $tmp: (0.85 * nth($points, 1) + 0.04 * nth($points, 2), -0.04 * nth($points, 1) + 0.85 * nth($points, 2) + 1.6);
+  } @else if $p < 851 {
+    $tmp: (0.2 * nth($points, 1) - 0.26 * nth($points, 2), 0.23 * nth($points, 1) + 0.22 * nth($points, 2) + 1.6);
+  } @else if $p < 980 {
+    $tmp: (-0.15 * nth($points, 1) + 0.28 * nth($points, 2), 0.26 * nth($points, 1) + 0.24 * nth($points, 2) + 0.44);
+  } @else {
+    $tmp: (0, 0.16 * nth($points, 2));
+  }
+
+  @return $tmp;
+}
+
+@mixin fern-shadow($points, $detail, $size) {
+  $shadow: ();
+
+  @for $i from 0 to 1000 {
+    $points: fern-coords($points, $i);
+    $shadow: append($shadow, ($size / 2) + nth($points, 1) * 20 + px ($size / 3) + nth($points, 2) * 15 + px, comma);
+  }
+
+  box-shadow: $shadow;
+}
+
+@mixin draw-dots($conf) {
+  $args: map-get($conf, 'points');
+
+  &:after {
+    content: '';
+    @include circle(1px);
+    @include absolute($left: 0, $top: 0);
+    @include fern-shadow($args, map-get($conf, 'detail'), map-get($conf, 'size'));
+  }
+}
+
+@mixin draw-system($conf) {
+  width: map-get($conf, 'size') + px;
+  height: map-get($conf, 'size') + px;
+  position: relative;
+  color: map-get($conf, 'color');
+  background-color: map-get($conf, 'background-color');
+
+  @include draw-dots($conf);
+}
+
+@mixin fern($x, $y, $options: ()) {
+  // Default options
+  $options: map-merge((
+    // Size of the grid
+    'size': 500,
+    // Color scheme
+    'color': #beff00, 
+    // Background-color #85a793
+    'background-color': #000,
+    // Points from the curve
+    'points': ($x, $y),
+    // Number of dots on the curve
+    'detail': 10000
+  ), $options);
+
+  @include draw-system($options);
+}
+
+.fern {
+  @include fern(0, 0);
+}
+
+.grid {
+  float: left;
+}

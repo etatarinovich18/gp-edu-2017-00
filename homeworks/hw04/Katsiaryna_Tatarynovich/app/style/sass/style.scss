@@ -1,6 +1,7 @@
 @import 'variables.scss';
 @import '../../components/cards/card.scss';
 @import '../../components/input/input.scss';
+@import '../../components/dateOfBirth/dateOfBirth.scss';
 // @import '../../components/form-filter/formFilter.scss';
 
 * {
@@ -32,6 +33,7 @@ h1 {
 input {
     &:focus {
         box-shadow: 0 0 8px $deepskyblue;
+        z-index: 100;
     }
 }
 

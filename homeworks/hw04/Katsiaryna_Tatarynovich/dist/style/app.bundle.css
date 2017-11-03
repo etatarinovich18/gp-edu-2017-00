@@ -170,19 +170,24 @@
         padding: 15px; } }
 
 .input.ng-invalid.ng-touched {
-  box-shadow: 0 0 8px red; }
+  box-shadow: 0 0 8px red;
+  z-index: 100; }
 
 .input.ng-invalid.ng-dirty {
-  box-shadow: 0 0 8px red; }
+  box-shadow: 0 0 8px red;
+  z-index: 100; }
 
 .input.ng-valid.ng-touched {
-  box-shadow: 0 0 8px #49a418; }
+  box-shadow: 0 0 8px #49a418;
+  z-index: 100; }
 
 .input.ng-valid.ng-dirty.ng-not-empty {
-  box-shadow: 0 0 8px #49a418; }
+  box-shadow: 0 0 8px #49a418;
+  z-index: 100; }
 
 .input.ng-touched.ng-empty {
-  box-shadow: 0 0 8px red; }
+  box-shadow: 0 0 8px red;
+  z-index: 100; }
 
 .input {
   display: inline-block;
@@ -196,6 +201,27 @@
   font-family: "Open Sans", sans-serif;
   font-size: 20px;
   line-height: 1.4; }
+
+.date-of-birth {
+  display: flex;
+  margin-bottom: 20px; }
+  .date-of-birth__input {
+    width: 115px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center; }
+    .date-of-birth__input--border-radius-0 {
+      border-radius: 0; }
+    .date-of-birth__input--border-radius-right {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; }
+    .date-of-birth__input--border-radius-left {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0; }
+    .date-of-birth__input--shadow-left {
+      box-shadow: 2px 2px #c6cacc inset; }
+    .date-of-birth__input--shadow-right {
+      box-shadow: -2px 2px #c6cacc inset; }
 
 * {
   margin: 0;
@@ -219,7 +245,8 @@ h1 {
   display: none; }
 
 input:focus {
-  box-shadow: 0 0 8px #00adf2; }
+  box-shadow: 0 0 8px #00adf2;
+  z-index: 100; }
 
 select:focus {
   box-shadow: 0 0 8px #00adf2; }
