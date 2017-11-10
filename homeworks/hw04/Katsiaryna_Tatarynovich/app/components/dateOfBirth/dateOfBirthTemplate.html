@@ -1,24 +1,26 @@
-<input
-    type="text"
-    name="dayOfBirth"
-    data-ng-model="valueDayOfBirth"
-    data-only-number
-    data-interval = "[1, 31]"
-    placeholder="DD"
-    class="date-of-birth__input date-of-birth__input--border-radius-right  date-of-birth__input--shadow-right input placeholder">
-<input
-    type="text"
-    name="monthOfBirth"
-    data-ng-model="valueMonthOfBirth"
-    data-only-number
-    data-interval = "[1, 12]"
-    placeholder="MM"
-    class="date-of-birth__input date-of-birth__input--border-radius-0 input placeholder">
-<input
-    type="text"
-    name="yearOfBirth"
-    data-ng-model="valueYearOfBirth"
-    data-only-number
-    data-interval = "[1873, 2018]"
-    placeholder="YYYY"
-    class="date-of-birth__input date-of-birth__input--border-radius-left  date-of-birth__input--shadow-left input placeholder">
+<div class="date-of-birth" name="dateOfBirth" data-min-age="21" data-ng-model="dataOfBirth" correct-date>
+    <input
+        type="text"
+        name="dayOfBirth"
+        data-ng-model="valueDayOfBirth"
+        data-only-number
+        data-ng-blur="$ctrl.updateDataOfBirthView(this); $ctrl.writeValueOfInput('dayOfBirth', this.valueDayOfBirth)"
+        placeholder="DD"
+        class="date-of-birth__input date-of-birth__input--border-radius-right  date-of-birth__input--shadow-right input placeholder"><!--
+    --><input
+        type="text"
+        name="monthOfBirth"
+        data-ng-model="valueMonthOfBirth"
+        data-only-number
+        data-ng-blur="$ctrl.updateDataOfBirthView(this); $ctrl.writeValueOfInput('monthOfBirth', this.valueMonthOfBirth)"
+        placeholder="MM"
+        class="date-of-birth__input date-of-birth__input--border-radius-0 input placeholder"><!--
+    --><input
+        type="text"
+        name="yearOfBirth"
+        data-ng-model="valueYearOfBirth"
+        data-only-number
+        data-ng-blur="$ctrl.updateDataOfBirthView(this); $ctrl.writeValueOfInput('yearOfBirth', this.valueYearOfBirth)"
+        placeholder="YYYY"
+        class="date-of-birth__input date-of-birth__input--border-radius-left  date-of-birth__input--shadow-left input placeholder">
+</div>

@@ -1,15 +1,34 @@
 class dateOfBirthController {
     constructor() {
-        console.log(this);
+        this.valueDateOfBirth = {
+            day: '',
+            month: '',
+            year: ''
+        }
+    }
+
+    writeValueOfInput(nameOfInput, value) {
+        switch (nameOfInput) {
+            case 'dayOfBirth':
+                this.valueDateOfBirth.day = value;
+                break;
+            case 'monthOfBirth':
+                this.valueDateOfBirth.month = value;
+                break;
+            case 'yearOfBirth':
+                this.valueDateOfBirth.year = value;
+                break;
+        }
+    }
+
+    updateDataOfBirthView(element) {
+        element.$parent.formFilter.dateOfBirth.$setViewValue(this.valueDateOfBirth);
     }
 }
 
 const dateOfBirthComponent = {
     templateUrl: 'app/components/dateOfBirth/dateOfBirthTemplate.html',
-    controller: dateOfBirthController,
-    // bindings: {
-    //     setPriceFieldStatus: '&'
-    // }
+    controller: dateOfBirthController
 };
 
 export default dateOfBirthComponent;
