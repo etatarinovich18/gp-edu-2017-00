@@ -21,7 +21,7 @@ class dateOfBirthController {
         }
     }
 
-    updateDataOfBirthView(element) {
+    updateDateOfBirthView(element) {
         element.$parent.formFilter.dateOfBirth.$setViewValue(this.valueDateOfBirth);
     }
 }

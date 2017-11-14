@@ -13,7 +13,7 @@ import { PatternValidatorDirective } from './directives/PatternValidatorDirectiv
 import { OnlyNumberDirective } from './directives/OnlyNumberDirective.js';
 import { FormatInputDirective } from './directives/FormatInputDirective.js';
 import { MinAgeValidatorDirective } from './directives/MinAgeValidatorDirective.js';
-import { correctDateValidatorDirective } from './directives/correctDateValidatorDirective.js';
+import { CorrectDateValidatorDirective } from './directives/CorrectDateValidatorDirective.js';
 
 import pageComponent from './components/page/pageComponent.js';
 import moneyInputComponent from './components/input/moneyInputComponent.js';
@@ -49,4 +49,4 @@ angular
     .directive('onlyNumber', OnlyNumberDirective)
     .directive('formatInput', ['$filter', FormatInputDirective])
     .directive('minAge', MinAgeValidatorDirective)
-    .directive('correctDate', correctDateValidatorDirective);
+    .directive('correctDate', CorrectDateValidatorDirective);

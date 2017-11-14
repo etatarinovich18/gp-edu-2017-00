@@ -10,28 +10,20 @@ export class MinAgeValidatorDirective {
         const minAge = attr.minAge;
 
         let currentDate = new Date();
-        let dateOfBirth;
-        let age;
+        let isAgeValid = false;
 
-        ngModel.$validators.checkAge = (modelValue, viewValue) => {
-            let isAgeValid = false;
+        scope.$watch(() => {
+            return ngModel.$viewValue;
+        }, () => {
+            if (ngModel.$viewValue) {
+                if ((ngModel.$viewValue.day && ngModel.$viewValue.month) && ngModel.$viewValue.year) {
+                    let dateOfBirth = new Date(ngModel.$viewValue.year, ngModel.$viewValue.month - 1, ngModel.$viewValue.day);
+                    let age = currentDate.getFullYear() - dateOfBirth.getFullYear();
+                    isAgeValid = (age >= minAge) ? true : false;
 
-            scope.$watch(() => {
-                return ngModel.$viewValue;
-            }, () => {
-                if (ngModel.$viewValue) {
-                    let isDateFilledOutCompletely = (ngModel.$viewValue.day && ngModel.$viewValue.month) && ngModel.$viewValue.year;
-
-                    if (isDateFilledOutCompletely) {
-                        dateOfBirth = new Date(ngModel.$viewValue.year, ngModel.$viewValue.month - 1, ngModel.$viewValue.day);
-                        age = currentDate.getFullYear() - dateOfBirth.getFullYear();
-
-                        isAgeValid = (age >= minAge) ? true : false;
-                    }
+                    ngModel.$setValidity('minAge', isAgeValid);
                 }
-            }, true);
-
-            return isAgeValid;
-        };
+            }
+        }, true);
     }
 }

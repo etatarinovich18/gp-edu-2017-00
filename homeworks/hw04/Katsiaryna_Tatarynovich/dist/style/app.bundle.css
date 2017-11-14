@@ -202,9 +202,16 @@
   font-size: 20px;
   line-height: 1.4; }
 
-.date-of-birth {
-  display: flex;
+date-of-birth {
+  display: inline-block;
   margin-bottom: 20px; }
+
+.error-msgs.date-of-birth-error {
+  text-align: left; }
+
+.date-of-birth {
+  display: inline-block;
+  margin-bottom: 5px; }
   .date-of-birth__input {
     width: 115px;
     padding-left: 10px;
@@ -222,6 +229,10 @@
       box-shadow: 2px 2px #c6cacc inset; }
     .date-of-birth__input--shadow-right {
       box-shadow: -2px 2px #c6cacc inset; }
+  .date-of-birth.ng-invalid.ng-dirty.ng-not-empty {
+    box-shadow: 0 0 8px red; }
+    .date-of-birth.ng-invalid.ng-dirty.ng-not-empty .input {
+      box-shadow: 0 0 8px red; }
 
 * {
   margin: 0;

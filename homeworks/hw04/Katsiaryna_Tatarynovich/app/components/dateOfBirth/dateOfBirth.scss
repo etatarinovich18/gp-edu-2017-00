@@ -1,6 +1,13 @@
-.date-of-birth {
-    display: flex;
+date-of-birth {
+    display: inline-block;
     margin-bottom: 20px;
+}
+.error-msgs.date-of-birth-error {
+    text-align: left;
+}
+.date-of-birth {
+    display: inline-block;
+    margin-bottom: 5px;
 
     &__input {
         width: 115px;
@@ -28,6 +35,14 @@
 
         &--shadow-right {
             box-shadow: -2px 2px $gray-light inset;
+        }
+    }
+
+    &.ng-invalid.ng-dirty.ng-not-empty {
+        box-shadow: 0 0 8px $red;
+
+        & .input {
+            box-shadow: 0 0 8px $red;
         }
     }
 }

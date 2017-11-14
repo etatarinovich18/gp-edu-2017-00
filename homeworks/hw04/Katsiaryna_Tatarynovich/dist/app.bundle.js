@@ -1467,7 +1467,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__directives_OnlyNumberDirective_js__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__directives_FormatInputDirective_js__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__directives_MinAgeValidatorDirective_js__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__directives_correctDateValidatorDirective_js__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__directives_CorrectDateValidatorDirective_js__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_page_pageComponent_js__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_input_moneyInputComponent_js__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_input_passwordInputComponent_js__ = __webpack_require__(141);
@@ -1501,7 +1501,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('app', [__WEBPACK_IMPORTED_MODULE_1_angular_messages___default.a, __WEBPACK_IMPORTED_MODULE_3_ng_redux__["a" /* default */], __WEBPACK_IMPORTED_MODULE_2_angular_ui_router___default.a]).config($ngReduxProvider => {
     $ngReduxProvider.createStoreWith(__WEBPACK_IMPORTED_MODULE_20__reducers__["a" /* rootReducer */], [__WEBPACK_IMPORTED_MODULE_4_redux_logger___default.a, __WEBPACK_IMPORTED_MODULE_5_redux_thunk___default.a]);
-}).component('page', __WEBPACK_IMPORTED_MODULE_15__components_page_pageComponent_js__["a" /* default */]).component('moneyInput', __WEBPACK_IMPORTED_MODULE_16__components_input_moneyInputComponent_js__["a" /* default */]).component('passwordInput', __WEBPACK_IMPORTED_MODULE_17__components_input_passwordInputComponent_js__["a" /* default */]).component('card', __WEBPACK_IMPORTED_MODULE_18__components_cards_cardComponent_js__["a" /* default */]).component('dateOfBirth', __WEBPACK_IMPORTED_MODULE_19__components_dateOfBirth_dateOfBirthComponent_js__["a" /* default */]).directive('reduxDirective', __WEBPACK_IMPORTED_MODULE_6__directives_ReduxDirective_js__["a" /* ReduxDirective */]).directive('interval', __WEBPACK_IMPORTED_MODULE_7__directives_IntervalValidatorDirective_js__["a" /* IntervalValidatorDirective */]).directive('maxLength', __WEBPACK_IMPORTED_MODULE_8__directives_MaxLengthValidatorDirective_js__["a" /* MaxLengthValidatorDirective */]).directive('minLength', __WEBPACK_IMPORTED_MODULE_9__directives_MinLengthValidatorDirective_js__["a" /* MinLengthValidatorDirective */]).directive('customPattern', __WEBPACK_IMPORTED_MODULE_10__directives_PatternValidatorDirective_js__["a" /* PatternValidatorDirective */]).directive('onlyNumber', __WEBPACK_IMPORTED_MODULE_11__directives_OnlyNumberDirective_js__["a" /* OnlyNumberDirective */]).directive('formatInput', ['$filter', __WEBPACK_IMPORTED_MODULE_12__directives_FormatInputDirective_js__["a" /* FormatInputDirective */]]).directive('minAge', __WEBPACK_IMPORTED_MODULE_13__directives_MinAgeValidatorDirective_js__["a" /* MinAgeValidatorDirective */]).directive('correctDate', __WEBPACK_IMPORTED_MODULE_14__directives_correctDateValidatorDirective_js__["a" /* correctDateValidatorDirective */]);
+}).component('page', __WEBPACK_IMPORTED_MODULE_15__components_page_pageComponent_js__["a" /* default */]).component('moneyInput', __WEBPACK_IMPORTED_MODULE_16__components_input_moneyInputComponent_js__["a" /* default */]).component('passwordInput', __WEBPACK_IMPORTED_MODULE_17__components_input_passwordInputComponent_js__["a" /* default */]).component('card', __WEBPACK_IMPORTED_MODULE_18__components_cards_cardComponent_js__["a" /* default */]).component('dateOfBirth', __WEBPACK_IMPORTED_MODULE_19__components_dateOfBirth_dateOfBirthComponent_js__["a" /* default */]).directive('reduxDirective', __WEBPACK_IMPORTED_MODULE_6__directives_ReduxDirective_js__["a" /* ReduxDirective */]).directive('interval', __WEBPACK_IMPORTED_MODULE_7__directives_IntervalValidatorDirective_js__["a" /* IntervalValidatorDirective */]).directive('maxLength', __WEBPACK_IMPORTED_MODULE_8__directives_MaxLengthValidatorDirective_js__["a" /* MaxLengthValidatorDirective */]).directive('minLength', __WEBPACK_IMPORTED_MODULE_9__directives_MinLengthValidatorDirective_js__["a" /* MinLengthValidatorDirective */]).directive('customPattern', __WEBPACK_IMPORTED_MODULE_10__directives_PatternValidatorDirective_js__["a" /* PatternValidatorDirective */]).directive('onlyNumber', __WEBPACK_IMPORTED_MODULE_11__directives_OnlyNumberDirective_js__["a" /* OnlyNumberDirective */]).directive('formatInput', ['$filter', __WEBPACK_IMPORTED_MODULE_12__directives_FormatInputDirective_js__["a" /* FormatInputDirective */]]).directive('minAge', __WEBPACK_IMPORTED_MODULE_13__directives_MinAgeValidatorDirective_js__["a" /* MinAgeValidatorDirective */]).directive('correctDate', __WEBPACK_IMPORTED_MODULE_14__directives_CorrectDateValidatorDirective_js__["a" /* CorrectDateValidatorDirective */]);
 
 /***/ }),
 /* 53 */
@@ -46893,29 +46893,21 @@ class MinAgeValidatorDirective {
         const minAge = attr.minAge;
 
         let currentDate = new Date();
-        let dateOfBirth;
-        let age;
+        let isAgeValid = false;
 
-        ngModel.$validators.checkAge = (modelValue, viewValue) => {
-            let isAgeValid = false;
+        scope.$watch(() => {
+            return ngModel.$viewValue;
+        }, () => {
+            if (ngModel.$viewValue) {
+                if (ngModel.$viewValue.day && ngModel.$viewValue.month && ngModel.$viewValue.year) {
+                    let dateOfBirth = new Date(ngModel.$viewValue.year, ngModel.$viewValue.month - 1, ngModel.$viewValue.day);
+                    let age = currentDate.getFullYear() - dateOfBirth.getFullYear();
+                    isAgeValid = age >= minAge ? true : false;
 
-            scope.$watch(() => {
-                return ngModel.$viewValue;
-            }, () => {
-                if (ngModel.$viewValue) {
-                    let isDateFilledOutCompletely = ngModel.$viewValue.day && ngModel.$viewValue.month && ngModel.$viewValue.year;
-
-                    if (isDateFilledOutCompletely) {
-                        dateOfBirth = new Date(ngModel.$viewValue.year, ngModel.$viewValue.month - 1, ngModel.$viewValue.day);
-                        age = currentDate.getFullYear() - dateOfBirth.getFullYear();
-
-                        isAgeValid = age >= minAge ? true : false;
-                    }
+                    ngModel.$setValidity('minAge', isAgeValid);
                 }
-            }, true);
-
-            return isAgeValid;
-        };
+            }
+        }, true);
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = MinAgeValidatorDirective;
@@ -46928,42 +46920,32 @@ class MinAgeValidatorDirective {
 "use strict";
 
 
-class correctDateValidatorDirective {
+class CorrectDateValidatorDirective {
     constructor() {
         this.restrict = 'A';
         this.require = 'ngModel';
     }
 
     link(scope, element, attr, ngModel) {
-        const minAge = attr.minAge;
-
         let currentDate = new Date();
-        let dateOfBirth;
-        let age;
+        let isDateOfBirthValid = false;
 
-        ngModel.$validators.checkAge = (modelValue, viewValue) => {
-            let isAgeValid = false;
+        scope.$watch(() => {
+            return ngModel.$viewValue;
+        }, () => {
+            if (ngModel.$viewValue) {
+                if (ngModel.$viewValue.day && ngModel.$viewValue.month && ngModel.$viewValue.year) {
+                    let dateOfBirth = new Date(ngModel.$viewValue.year, ngModel.$viewValue.month - 1, ngModel.$viewValue.day);
 
-            scope.$watch(() => {
-                return ngModel.$viewValue;
-            }, () => {
-                if (ngModel.$viewValue) {
-                    let isDateFilledOutCompletely = ngModel.$viewValue.day && ngModel.$viewValue.month && ngModel.$viewValue.year;
+                    isDateOfBirthValid = !isNaN(dateOfBirth) && dateOfBirth.getDate() == ngModel.$viewValue.day && dateOfBirth.getMonth() + 1 == ngModel.$viewValue.month && dateOfBirth.getFullYear() == ngModel.$viewValue.year ? true : false;
 
-                    if (isDateFilledOutCompletely) {
-                        dateOfBirth = new Date(ngModel.$viewValue.year, ngModel.$viewValue.month - 1, ngModel.$viewValue.day);
-                        age = currentDate.getFullYear() - dateOfBirth.getFullYear();
-
-                        isAgeValid = age >= minAge ? true : false;
-                    }
+                    ngModel.$setValidity('correctDate', isDateOfBirthValid);
                 }
-            }, true);
-
-            return isAgeValid;
-        };
+            }
+        }, true);
     }
 }
-/* harmony export (immutable) */ __webpack_exports__["a"] = correctDateValidatorDirective;
+/* harmony export (immutable) */ __webpack_exports__["a"] = CorrectDateValidatorDirective;
 
 
 /***/ }),
@@ -47071,7 +47053,7 @@ class dateOfBirthController {
         }
     }
 
-    updateDataOfBirthView(element) {
+    updateDateOfBirthView(element) {
         element.$parent.formFilter.dateOfBirth.$setViewValue(this.valueDateOfBirth);
     }
 }

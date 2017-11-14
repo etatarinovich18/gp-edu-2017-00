@@ -1,10 +1,10 @@
-<div class="date-of-birth" name="dateOfBirth" data-min-age="21" data-ng-model="dataOfBirth" correct-date>
+<div class="date-of-birth" name="dateOfBirth"  correct-date data-min-age="21" data-ng-model="dateOfBirth">
     <input
         type="text"
         name="dayOfBirth"
         data-ng-model="valueDayOfBirth"
         data-only-number
-        data-ng-blur="$ctrl.updateDataOfBirthView(this); $ctrl.writeValueOfInput('dayOfBirth', this.valueDayOfBirth)"
+        data-ng-blur="$ctrl.updateDateOfBirthView(this); $ctrl.writeValueOfInput('dayOfBirth', this.valueDayOfBirth)"
         placeholder="DD"
         class="date-of-birth__input date-of-birth__input--border-radius-right  date-of-birth__input--shadow-right input placeholder"><!--
     --><input
@@ -12,7 +12,7 @@
         name="monthOfBirth"
         data-ng-model="valueMonthOfBirth"
         data-only-number
-        data-ng-blur="$ctrl.updateDataOfBirthView(this); $ctrl.writeValueOfInput('monthOfBirth', this.valueMonthOfBirth)"
+        data-ng-blur="$ctrl.updateDateOfBirthView(this); $ctrl.writeValueOfInput('monthOfBirth', this.valueMonthOfBirth)"
         placeholder="MM"
         class="date-of-birth__input date-of-birth__input--border-radius-0 input placeholder"><!--
     --><input
@@ -20,7 +20,12 @@
         name="yearOfBirth"
         data-ng-model="valueYearOfBirth"
         data-only-number
-        data-ng-blur="$ctrl.updateDataOfBirthView(this); $ctrl.writeValueOfInput('yearOfBirth', this.valueYearOfBirth)"
+        data-ng-blur="$ctrl.updateDateOfBirthView(this); $ctrl.writeValueOfInput('yearOfBirth', this.valueYearOfBirth)"
         placeholder="YYYY"
         class="date-of-birth__input date-of-birth__input--border-radius-left  date-of-birth__input--shadow-left input placeholder">
 </div>
+<ul class="error-msgs date-of-birth-error" ng-messages="$parent.formFilter.dateOfBirth.$error" ng-show="$parent.formFilter.dateOfBirth.$dirty">
+    <li ng-message="minAge" class="error-msgs__item">The age has to be more than 21 years</li>
+    <li ng-message="correctDate" class="error-msgs__item">
+    Please let us know when you were born</li>
+</ul>
